@@ -1,0 +1,13 @@
+<ion-view view-title="Create Room">
+  <ion-content class="padding create-room">
+      <form ng-submit="createRoom(room)">
+          <div class="list list-inset">
+              <label class="item item-input">
+                  <input type="text" placeholder="Chatroom name" ng-model="room.name">
+              </label>
+          </div>
+          <button class="button button-outline button-light" ng-click="createRoom(room)">Create</button>
+          <p class="err-message">{{message}}</p>
+      </form>
+  </ion-content>
+</ion-view>

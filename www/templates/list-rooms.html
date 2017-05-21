@@ -1,0 +1,13 @@
+<ion-view view-title="Rooms">
+  <ion-content class="padding has-subheader has-footer" id="list-rooms">
+    <ion-list id="chat-div">
+      <ion-item class="item item-avatar" ng-repeat="message in messages track by $index" scroll-glue="messages">
+        <img class="avatar" ng-src="{{message.message.picture}}" alt="">
+        <div class="message-block">
+            <p><strong>{{message.message.user}}</strong> <span am-time-ago="message.message.time"></span></p>
+            <p> {{message.message.message}}</p>
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,21 @@
+<ion-view hide-nav-bar="true">
+  <ion-content class="registration padding">
+    <img src="img/logo.png">
+    <form ng-submit="login(login)">
+        <div class="list list-inset">
+            <label class="item item-input">
+                <input type="email" placeholder="E-mail" ng-model="login.email">
+            </label>
+            <label class="item item-input">
+                <input type="password" placeholder="Password" ng-model="login.password">
+            </label>
+        </div>
+        <button class="button button-outline button-light" ng-click="login(login)">Login</button>
+    </form>
+    <div class="sign-up">
+        <p>Don't have an account?</p>
+        <hr>
+        <a ng-click="goToSignUp()">Sign Up</a>
+    </div>
+  </ion-content>
+</ion-view>

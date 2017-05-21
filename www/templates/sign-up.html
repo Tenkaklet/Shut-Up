@@ -1,0 +1,47 @@
+<ion-modal-view>
+  <ion-header-bar class="bar-clear">
+
+  </ion-header-bar>
+  <ion-content class="padding sign-up-modal">
+      <ion-slide-box>
+
+   <ion-slide class="step-1">
+       <h1>Welcome!</h1>
+       <h4>I only need you to complete two simple steps to begin using the app!</h4>
+       <form ng-submit="signUp(data)">
+           <div class="list list-inset">
+               <label class="item item-input">
+                   <input type="text" placeholder="E-mail" ng-model="data.email">
+               </label>
+               <label class="item item-input">
+                   <input type="password" placeholder="Password" ng-model="data.password">
+               </label>
+           </div>
+           <button class="button button-outline button-light" ng-click="signUp(data)">Next >></button>
+           <p class="err-message">{{message}}</p>
+       </form>
+   </ion-slide>
+
+   <ion-slide class="step-2">
+       <h1>And...</h1>
+       <h4>What would you like others to refer to you as?</h4>
+       <form ng-submit="createUserName(data)">
+           <div class="list list-inset">
+               <label class="item item-input">
+                   <input type="text" placeholder="Username" ng-model="data.username">
+               </label>
+           </div>
+           <button class="button button-outline button-light" ng-click="createUserName(data)">Finish</button>
+       </form>
+      <button class="button button-outline button-light button-small" ng-click="prevStep()"> << Previous</button>
+   </ion-slide>
+
+</ion-slide-box>
+
+    <div class="sign-up">
+        <p>Change your mind?</p>
+        <hr>
+        <a ng-click="closeSignUp()">Cancel</a>
+    </div>
+  </ion-content>
+</ion-modal-view>

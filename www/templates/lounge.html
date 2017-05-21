@@ -1,0 +1,26 @@
+<ion-view view-title="Lounge">
+  <ion-nav-buttons side="right" ng-show="false">
+    <button class="button button-icon button-clear ion-ios-person-outline" ng-click="openPopover($event)">
+
+    </button>
+    <span>{{occupancy.occupancy}} people here</span>
+  </ion-nav-buttons>
+  <ion-content class="padding has-subheader has-footer" id="chatroom">
+    <ion-list id="chat-div">
+      <ion-item class="item item-avatar" ng-repeat="message in messages track by $index" scroll-glue="messages">
+        <img class="avatar" ng-src="{{message.message.picture}}" alt="">
+        <div class="message-block">
+            <p><strong>{{message.message.user}}</strong> <span am-time-ago="message.message.time"></span></p>
+            <p> {{message.message.message}}</p>
+        </div>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+  <ion-footer-bar keyboard-attach class="shut-up-keyboard item-input-inset">
+    <label class="item-input-wrapper">
+      <input type="text" placeholder="Type a message..."  ng-keypress="($event.charCode==13)? sendMessage() : return" ng-model="message">
+    </label>
+    <button class="button button-clear" ng-click="sendMessage()"><i class="icon ion-android-send"></i></button>
+  </ion-footer-bar>
+</ion-view>
